@@ -7,7 +7,7 @@
 [[ $- != *i* ]] && return
 
 eval `dircolors -b`
-export PATH=$PATH:~/bin
+export PATH=$PATH:$HOME/bin:$HOME/local/bin
 
 # Editors
 export EDITOR="emacsclient -c"
