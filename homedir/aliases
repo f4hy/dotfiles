@@ -1,3 +1,8 @@
+#  -*- mode: sh; -*-
+#
+# ~/.alaises my aliases
+#
+
 alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias la='ls -A'
@@ -8,6 +13,7 @@ alias et='emacsclient -t'
 
 if [ -f /etc/arch-release ]; then
    alias update='yaourt -Syu --aur'
+   alias ncupdate='yaourt -Syu --noconfirm --aur'
 fi
 
 alias more='less'

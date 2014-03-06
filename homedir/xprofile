@@ -8,8 +8,8 @@
 
 urxvtd -q -o -f
 xrdb -merge ~/.Xresources
-
-xmodmap ~/.xmodmap
+numlockx &
+xmodmap ~/.xmodmap &
 
 export EDITOR="emacsclient -c"
 export VISUAL="emacsclient -c -n"

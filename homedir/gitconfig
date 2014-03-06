@@ -1,9 +1,16 @@
 [user]
 	name = Brendan Fahy
 	email = bmfahy@gmail.com
-[cor]
-	editor = emacs
+[core]
+	editor = emacsclient -c
 [merge]
 	tool = meld
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+[push]
+	default = simple
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = auto
