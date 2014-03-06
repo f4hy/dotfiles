@@ -1,0 +1,61 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+alias ll='ls -lh'
+alias la='ls -A'
+alias rtemp='rm *~'
+alias rm="rm -I"
+alias ec='emacsclient -c -n'
+alias et='emacsclient -t'
+alias update='yaourt -Syu --aur'
+eval `dircolors -b`
+export PATH=$PATH:~/bin
+export PATH=$PATH:~/develop/effectivemass/scripts
+
+# Editors
+export EDITOR="emacsclient -c"
+export VISUAL="emacsclient -c"
+export ALTERNATE_EDITOR=""
+
+#colored grep
+export GREP_COLOR="1;33"
+alias grep='grep --color=auto'
+
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
+
+unset PROMPT_COMMAND
+source ~/local/liquidprompt/liquidprompt
+
+shopt -s cdspell
+shopt -s cdable_vars
+shopt -s checkhash
+shopt -s checkwinsize
+shopt -s sourcepath
+shopt -s no_empty_cmd_completion
+shopt -s cmdhist
+shopt -s histappend histreedit histverify
+
+export HISTSIZE=2000
+export HISTCONTROL=erasedups
+
+alias more='less'
+export PAGER=less
+
+alias onerwin='urxvtc -e bash -c "ssh -t erwin \"echo ${PWD/f4hy/bfahy} > /home/bfahy/.ssh/ssh_cd; sleep 1; bash --login;\""'
+alias onwilson='urxvtc -e bash -c "ssh -t wilson \"echo ${PWD/f4hy/bfahy} > /home/bfahy/.ssh/ssh_cd; bash --login;\""'
+
+function sshcd() { ssh -t $@ "cd $PWD; cd -P .; bash;";}
+
+alias connectsshfs='sshfs -o reconnect -o workaround=all -o compression=no wilson:/latticeQCD/raid2/bfahy/ ~/r2/ && sshfs -o reconnect -o workaround=all -o compression=no wilson:/latticeQCD/raid6/bfahy ~/r6/'
+
+HOSTNAME=$(hostname)
+if [ "$(hostname)" != "erwin" ]; then
+    alias qstat="echo -e '\033[1;31mYou idiot, you are not on erwin\033[0;0m'; ssh erwin /opt/pbs/bin/qstat"
+fi

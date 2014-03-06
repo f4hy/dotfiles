@@ -1,0 +1,28 @@
+#!/bin/bash
+
+#
+# ~/.profile
+#
+# Executed by startx (run your window manager from here)
+#
+
+urxvtd -q -o -f
+xrdb -merge ~/.Xresources
+
+xmodmap ~/.xmodmap
+
+export EDITOR="emacsclient -c"
+export VISUAL="emacsclient -c -n"
+export ALTERNATE_EDITOR=""
+
+export PATH=$PATH:~/bin:/usr/local/bin
+
+##### GNOME KEYRING STUFF
+# Start a D-Bus session
+source /etc/X11/xinit/xinitrc.d/30-dbus
+# Start GNOME Keyring
+eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
+# You probably need to do this too:
+export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT_INFO SSH_AUTH_SOCK
+##### END GNOME KEYRING STUFF
+start-pulseaudio-x11
