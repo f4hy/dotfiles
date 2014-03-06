@@ -8,12 +8,12 @@ backup(){
     BACKUPDIR=~/.backup/$CURDATE/
     echo "backing up to ${BACKUPDIR}"
     mkdir -p ${BACKUPDIR}
-    
+
     for f in homedir/*; do
         name=$(basename $f)
         echo $name
-        ls ~/.${name} 
-        cp ~/.${name} ${BACKUPDIR}${name} 
+        ls ~/.${name}
+        cp ~/.${name} ${BACKUPDIR}${name}
     done
 }
 
@@ -26,6 +26,31 @@ install() {
     done
 }
 
+setup_liquidprompt(){
+    if [ -d "$HOME/local/liquidprompt/" ]; then
+        echo "$HOME/local/liquidprompt exists!"
+        read -p "Would you like to update the liquidprompt in ~/local ? " -n 1 -r
+        echo    # (optional) move to a new line
+        if [[ $REPLY =~ ^[Yy]$ ]]
+        then
+            pushd ~/local/liquidprompt/
+            git pull
+            popd
+        fi
+    else
+        read -p "Would you like to install the liquidprompt to ~/local ? " -n 1 -r
+        echo    # (optional) move to a new line
+        if [[ $REPLY =~ ^[Yy]$ ]]
+        then
+            mkdir -p ~/local
+            pushd ~/local
+            git clone https://github.com/nojhan/liquidprompt.git
+            popd
+        fi
+    fi
+}
+
 
 backup
 install
+setup_liquidprompt
