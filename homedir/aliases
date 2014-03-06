@@ -1,0 +1,14 @@
+alias ls='ls --color=auto'
+alias ll='ls -lh'
+alias la='ls -A'
+alias rtemp='rm *~'
+alias rm="rm -I"
+alias ec='emacsclient -c -n'
+alias et='emacsclient -t'
+
+if [ -f /etc/arch-release ]; then
+   alias update='yaourt -Syu --aur'
+fi
+
+alias more='less'
+
