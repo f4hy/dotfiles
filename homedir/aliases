@@ -7,16 +7,19 @@ alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias la='ls -A'
 alias rtemp='rm *~'
-alias rm="rm -I"
+alias rm="rm -i"
 alias ec='emacsclient -c -n'
 alias et='emacsclient -t'
 
 if [ -f /etc/arch-release ]; then
    alias update='yaourt -Syu --aur'
    alias ncupdate='yaourt -Syu --noconfirm --aur'
+   alias rm="rm -I"             #better than rm -i but only in newer versions
 fi
 
 alias more='less'
 
 alias today='find -maxdepth 1 -type f -mtime -1'
 alias rs='rsync -av --progress'
+
+alias real='cd `pwd -P`'
