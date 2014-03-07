@@ -52,4 +52,4 @@ fi
 source ~/.aliases
 if [ -f ~/.localrc ]; then
 source ~/.localrc
-if
+fi
