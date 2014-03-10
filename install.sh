@@ -17,17 +17,31 @@ backup_homedir(){
     done
 }
 
-backup_ssh(){
-    echo "making backup of ssh"
-    echo "backing up to ${BACKUPDIR}ssh_"
+backup_folder(){
+    FOLDER=$1
+    echo "making backup of ${FOLDER}"
+    echo "backing up to ${BACKUPDIR}${FOLDER}_"
     mkdir -p ${BACKUPDIR}
-    for f in ssh/*; do
+    for f in ${FOLDER}/*; do
         name=$(basename $f)
         echo $name
-        ls ~/.ssh/${name}
-        cp ~/.ssh/${name} ${BACKUPDIR}ssh_${name}
+        ls ~/.${FOLDER}/${name}
+        cp ~/.${FOLDER}/${name} ${BACKUPDIR}${FOLDER}_${name}
     done
 }
+
+backup_ssh(){
+    echo "making backup of i3 configs"
+    echo "backing up to ${BACKUPDIR}i3_"
+    mkdir -p ${BACKUPDIR}
+    for f in i3/*; do
+        name=$(basename $f)
+        echo $name
+        ls ~/.i3/${name}
+        cp ~/.i3/${name} ${BACKUPDIR}i3_${name}
+    done
+}
+
 
 install_homedir() {
     echo "installing"
@@ -44,6 +58,16 @@ install_ssh() {
         name=$(basename $f)
         echo "copying ${f} to ~/.ssh/${name}"
         cp -v ${f} ~/.ssh/${name}
+    done
+}
+
+install_folder() {
+    FOLDER=$1
+    echo "installing ${FOLDER}"
+    for f in ${FOLDER}/*; do
+        name=$(basename $f)
+        echo "copying ${f} to ~/.${FOLDER}/${name}"
+        cp -v ${f} ~/.${FOLDER}/${name}
     done
 }
 
@@ -72,9 +96,15 @@ setup_liquidprompt(){
     fi
 }
 
+setup_i3() {
+    $HOME/.i3/makeconfig.sh
+}
 
 backup_homedir
 install_homedir
-backup_ssh
-install_ssh
+backup_folder "ssh"
+install_folder "ssh"
+backup_folder "i3"
+install_folder "i3"
+setup_i3
 setup_liquidprompt
