@@ -5,6 +5,7 @@
 	editor = emacsclient -c
 [merge]
 	tool = meld
+	ff = false
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 [push]
