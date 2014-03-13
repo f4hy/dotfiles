@@ -20,14 +20,12 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 floating_modifier $mod
 
 # start a terminal
-#bindsym $mod+r exec i3-sensible-terminal
 bindsym $mod+r exec urxvtc
 
 new_window normal
 new_float normal
 bindsym $mod+m border toggle
 bindsym $mod+n bar mode toggle
-# bindsym $mod+Shift+m border n
 for_window [class="Chromium"] border none
 for_window [class="(?i)emacs"] border 1pixel
 for_window [class="(?i)urxvt"] border 1pixel
@@ -46,16 +44,8 @@ bindsym $mod+f exec chromium
 bindsym $mod+t exec emacsclient -c -n
 
 #startup
-# exec --no-startup-id dropboxd
-# exec --no-startup-id transmission-gtk -m
 exec --no-startup-id /home/f4hy/bin/startup.sh
 
-
-# # change focus
-# bindsym $mod+j focus left
-# bindsym $mod+k focus down
-# bindsym $mod+l focus up
-# bindsym $mod+semicolon focus right
 
 bindsym $mod+l resize grow width 10 px or 10 ppt
 bindsym $mod+j resize grow height 10 px or 10 ppt
@@ -78,12 +68,6 @@ bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
-
-# # move focused window
-# bindsym $mod+Shift+J move left
-# bindsym $mod+Shift+K move down
-# bindsym $mod+Shift+L move up
-# bindsym $mod+Shift+colon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -116,18 +100,12 @@ bindsym $mod+e layout default
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-# # change focus between tiling / floating windows
-# bindsym $mod+space focus mode_toggle
-
 # change focus between tiling / floating windows
 bindsym $mod+space layout toggle all
 
 
 # focus the parent container
 bindsym $mod+a focus parent
-
-# focus the child container
-#bindcode $mod+d focus child
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -173,6 +151,7 @@ bindsym $mod+Shift+R exec --no-startup-id ~/.i3/makeconfig.sh; exec sync;exec re
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+E exit
 
+#logout
 bindsym $mod+Shift+braceright exec /usr/lib/lightdm/lightdm/gdmflexiserver
 
 
