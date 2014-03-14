@@ -145,9 +145,9 @@ bindsym $mod+Shift+parenleft move container to workspace 9
 bindsym $mod+Shift+parenright move container to workspace 10
 
 # reload the configuration file
-bindsym $mod+q exec --no-startup-id ~/.i3/makeconfig.sh; exec sync; exec reload
+bindsym $mod+q exec --no-startup-id reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+R exec --no-startup-id ~/.i3/makeconfig.sh; exec sync;exec restart
+bindsym $mod+Shift+R exec --no-startup-id exec ~/.i3/makeconfig.sh; exec sync; restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+E exit
 
