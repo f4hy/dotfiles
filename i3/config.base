@@ -25,7 +25,7 @@ bindsym $mod+r exec urxvtc
 new_window normal
 new_float normal
 bindsym $mod+m border toggle
-bindsym $mod+n bar mode toggle
+# bindsym $mod+n bar mode toggle
 for_window [class="Chromium"] border none
 for_window [class="(?i)emacs"] border 1pixel
 for_window [class="(?i)urxvt"] border 1pixel
@@ -154,6 +154,8 @@ bindsym $mod+Shift+E exit
 #logout
 bindsym $mod+Shift+braceright exec /usr/lib/lightdm/lightdm/gdmflexiserver
 
+# default direction should be right, overload in local config to change
+set $DIRECTION right
 
 bindsym Mod1+grave focus output $DIRECTION
 bindsym $mod+grave move window to output $DIRECTION; focus output $DIRECTION
