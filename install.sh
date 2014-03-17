@@ -30,34 +30,12 @@ backup_folder(){
     done
 }
 
-backup_ssh(){
-    echo "making backup of i3 configs"
-    echo "backing up to ${BACKUPDIR}i3_"
-    mkdir -p ${BACKUPDIR}
-    for f in i3/*; do
-        name=$(basename $f)
-        echo $name
-        ls ~/.i3/${name}
-        cp ~/.i3/${name} ${BACKUPDIR}i3_${name}
-    done
-}
-
-
 install_homedir() {
     echo "installing"
     for f in homedir/*; do
         name=$(basename $f)
         echo "copying ${f} to ~/.${name}"
         cp -v ${f} ~/.${name}
-    done
-}
-
-install_ssh() {
-    echo "installing"
-    for f in ssh/*; do
-        name=$(basename $f)
-        echo "copying ${f} to ~/.ssh/${name}"
-        cp -v ${f} ~/.ssh/${name}
     done
 }
 
@@ -100,6 +78,10 @@ setup_i3() {
     $HOME/.i3/makeconfig.sh
 }
 
+setup_ssh() {
+    chmod 600 ~/.ssh/*
+}
+
 backup_homedir
 install_homedir
 backup_folder "ssh"
@@ -107,4 +89,5 @@ install_folder "ssh"
 backup_folder "i3"
 install_folder "i3"
 setup_i3
+setup_ssh
 setup_liquidprompt
