@@ -190,5 +190,6 @@ for_window [class="(?i)dota_linux"] fullscreen
 assign [class="(?i)dota_linux"] → dota
 assign [class="(?i)steam"] → steam
 assign [class="(?i)mumble"] → mumble
+assign [class="(?i)chromium" instance="(?i)crx_nckgahadagoaajjgafhacjanaoiihapd"] → chat
 
 #End of base config. config.local should be put under here
