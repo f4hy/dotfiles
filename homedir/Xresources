@@ -45,6 +45,7 @@ Xcursor.size: 16
 ! Copied URxvg settings --------------------------------------------------
 ! URxvt.geometry: 80x25
 URxvt.font: xft:DejaVu Sans Mono:pixelsize=15:antialias=true
+urxvt*urgentOnBell:       true
 ! URxvt*inheritPixmap: true
 ! URxvt*tintColor: gray30
 ! URxvt*tintColor: #FFFFFF
