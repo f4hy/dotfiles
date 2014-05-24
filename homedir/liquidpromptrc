@@ -7,7 +7,7 @@
 # you can load the corresponding files here:
 #source ~/code/liquidprompt/nojhan.theme
 #LP_PS1_FILE="~/code/liquidprompt/nojhan.ps1"
-LP_PS1_POSTFIX="\n>"
+LP_PS1_POSTFIX="\a\n>"
 
 #############
 # BEHAVIOUR #

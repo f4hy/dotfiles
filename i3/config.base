@@ -147,7 +147,7 @@ bindsym $mod+Shift+parenright move container to workspace number 10
 # reload the configuration file
 bindsym $mod+q reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+R exec --no-startup-id exec ~/.i3/makeconfig.sh; exec sync; restart
+bindsym $mod+Shift+R restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+E exit
 
@@ -162,8 +162,8 @@ bindsym $mod+grave move window to output $DIRECTION; focus output $DIRECTION
 bindsym $mod+Shift+grave move workspace to output $DIRECTION
 bindsym $mod+Mod1+KP_Add exec --no-startup-id toggle-monitor.sh
 
-bindsym $mod+KP_Add exec switch_audio.sh 0
-bindsym $mod+KP_Subtract exec switch_audio.sh 1
+bindsym $mod+KP_Add exec ~/bin/switch_audio.sh 0
+bindsym $mod+KP_Subtract exec ~/bin/switch_audio.sh 1
 bindsym $mod+o exec pavucontrol
 
 # Make the currently focused window a scratchpad
@@ -186,6 +186,7 @@ for_window [class="(?i)FrozenSynapse"] floating enable
 for_window [title="(?i)Outer Space 0.5"] floating enable
 for_window [class="Xfce4-notifyd"] floating enable; border none; focus mode_toggle
 for_window [class="(?i)dota_linux"] fullscreen
+for_window [class="(?i)chromium" instance="(?i)crx_nckgahadagoaajjgafhacjanaoiihapd"] border normal 
 
 assign [class="(?i)dota_linux"] → dota
 assign [class="(?i)steam"] → steam
