@@ -5,6 +5,7 @@
 #
 # Executed by startx (run your window manager from here)
 #
+xset -b
 
 urxvtd -q -o -f
 xrdb -merge ~/.Xresources
