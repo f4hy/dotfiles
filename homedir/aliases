@@ -23,3 +23,6 @@ alias today='find -maxdepth 1 -type f -mtime -1'
 alias rs='rsync -av --progress'
 
 alias real='cd `pwd -P`'
+settitle() {
+    echo -ne "\033]0;${1}\007"
+}
