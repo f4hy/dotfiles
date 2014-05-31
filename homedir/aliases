@@ -23,3 +23,7 @@ alias today='find -maxdepth 1 -type f -mtime -1'
 alias rs='rsync -av --progress'
 
 alias real='cd `pwd -P`'
+
+alias gwine='ps aux | grep -e wine -e exe'
+
+alias closeeve='killall -I exefile.exe'
