@@ -27,3 +27,6 @@ alias real='cd `pwd -P`'
 alias gwine='ps aux | grep -e wine -e exe'
 
 alias closeeve='killall -I exefile.exe'
+settitle() {
+    echo -ne "\033]0;${1}\007"
+}
