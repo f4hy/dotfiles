@@ -10,9 +10,15 @@ eval `dircolors -b`
 export PATH=$HOME/local/bin:$PATH:$HOME/bin
 
 # Editors
-export EDITOR="emacsclient -c"
-export VISUAL="emacsclient -c"
-export ALTERNATE_EDITOR=""
+if [ "$SSH_CONNECTION" = "" ]; then
+    export EDITOR="emacsclient -c"
+    export VISUAL="emacsclient -c"
+    export ALTERNATE_EDITOR=""
+else
+    export EDITOR="emacsclient -t"
+    export VISUAL="emacsclient -t"
+    export ALTERNATE_EDITOR=""
+fi
 
 #colored grep
 export GREP_COLOR="1;33"
