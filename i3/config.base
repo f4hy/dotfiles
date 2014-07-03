@@ -194,6 +194,7 @@ assign [class="(?i)steam"] → steam
 assign [class="(?i)mumble"] → mumble
 assign [class="(?i)chromium" instance="(?i)crx_nckgahadagoaajjgafhacjanaoiihapd"] → chat
 assign [class="EVE"] → eve
+assign [class="(?i)game.x86_64"] → xcom
 
 bindsym $mod+u exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
 bindsym $mod+i exec --no-startup-id ~/.i3/append_workspace_name.sh
