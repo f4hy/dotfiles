@@ -42,7 +42,9 @@ shopt -s no_empty_cmd_completion
 shopt -s cmdhist
 shopt -s histappend histreedit histverify
 
-export HISTSIZE=2000
+export HISTFILESIZE=500000
+export HISTSIZE=100000
+export HISTIGNORE='&:cd:ls:bin/ss;history *'
 export HISTCONTROL=erasedups
 
 alias more='less'

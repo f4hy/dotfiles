@@ -3,9 +3,9 @@
 # ~/.alaises my aliases
 #
 
-alias ls='ls --color=auto'
-alias ll='ls -lh'
-alias la='ls -A'
+alias ls='ls -hF --color=auto'
+alias ll='ls -lhF --group-directories-first'
+alias la='ls -dAFh --color=auto .[^.]*'
 alias rtemp='rm *~'
 alias rm="rm -i"
 alias ec='emacsclient -c -n'
@@ -29,4 +29,8 @@ alias gwine='ps aux | grep -e wine -e exe'
 alias closeeve='killall -I exefile.exe'
 settitle() {
     echo -ne "\033]0;${1}\007"
+}
+
+function my_ps() {
+	ps $@ -u $USER -o pid,%cpu,%mem,bsdtime,command ;
 }

@@ -51,15 +51,15 @@ urxvt*urgentOnBell:       true
 ! URxvt*tintColor: #FFFFFF
 URxvt.internalBorder: 0
 URxvt.jumpScroll: true
-! URxvt.loginShell: true
+URxvt*matcher.button: 1
 URxvt.perl-ext-common: default,matcher,font-size,searchable-scrollback
 URxvt.pointerBlank: true
-URxvt.saveLines: 4000
+URxvt.saveLines: 5000
 URxvt.secondaryScroll: true
 URxvt.scrollBar: false
 URxvt.scrollTtyKeypress: true
 URxvt.scrollWithBuffer: true
-URxvt*urlLauncher: /usr/bin/firefox
+URxvt*urlLauncher: chromium
 
 ! disable to allow font size change
 URxvt.iso14755: false
