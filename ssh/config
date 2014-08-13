@@ -22,6 +22,10 @@ Host albert
 User bfahy
 HostName albert.phys.cmu.edu
 
+Host max
+User bfahy
+HostName max.phys.cmu.edu
+
 Host f4hy.com
 User f4hy_f4hycom
 HostName ssh.phx.nearlyfreespeech.net
