@@ -35,4 +35,9 @@ function my_ps() {
 	ps $@ -u $USER -o pid,%cpu,%mem,bsdtime,command ;
 }
 
+function namedcat() {
+    for i in $@ ; do echo $i; cat $i; done
+}
+
+
 function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
