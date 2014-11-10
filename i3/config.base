@@ -60,7 +60,8 @@ bindsym $mod+Control+p focus up
 bindsym $mod+Control+n focus down
 
 # change focus
-bindsym Mod1+Tab exec python ~/.i3/rotate_i3.py next
+# bindsym Mod1+Tab exec python ~/.i3/rotate_i3.py next
+bindsym Mod1+Tab exec python ~/.i3/cycle.py
 
 
 # alternatively, you can use the cursor keys:
@@ -193,6 +194,9 @@ assign [class="(?i)dota_linux"] → dota
 assign [class="(?i)steam"] → steam
 assign [class="(?i)mumble"] → mumble
 assign [class="(?i)chromium" instance="(?i)crx_nckgahadagoaajjgafhacjanaoiihapd"] → chat
+assign [class="(?i)pidgin"] → chat
+assign [class="(?i)Line.exe"] → L
+assign [class="(?i)wine"] → wine
 assign [class="EVE"] → eve
 assign [class="(?i)game.x86_64"] → xcom
 
