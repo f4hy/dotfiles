@@ -4,8 +4,8 @@ import sys
 
 
 def focus_next():
-    num = i3.filter(i3.get_workspaces(), focused=True)[0]['num']
-    ws_nodes = i3.filter(num=num)[0]['nodes']
+    name = i3.filter(i3.get_workspaces(), focused=True)[0]['name']
+    ws_nodes = i3.filter(name=name)[0]['nodes']
     curr = i3.filter(ws_nodes, focused=True)[0]
 
     ids = [win['id'] for win in i3.filter(ws_nodes, nodes=[])]
