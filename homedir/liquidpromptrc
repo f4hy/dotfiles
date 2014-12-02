@@ -8,6 +8,10 @@
 #source ~/code/liquidprompt/nojhan.theme
 #LP_PS1_FILE="~/code/liquidprompt/nojhan.ps1"
 LP_PS1_POSTFIX="\a\n>"
+if [ -n "$ZSH_VERSION" ]; then
+LP_PS1_POSTFIX="%{$(echo "\a")%}
+>"
+fi
 
 #############
 # BEHAVIOUR #
@@ -54,7 +58,7 @@ LP_ENABLE_PERM=1
 
 # Do you want to use the shorten path feature ?
 # Recommended value is 1
-LP_ENABLE_SHORTEN_PATH=1
+LP_ENABLE_SHORTEN_PATH=0
 
 # Do you want to use the proxy detection feature ?
 # Recommended value is 1
