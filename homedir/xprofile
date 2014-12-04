@@ -9,6 +9,7 @@ xset -b
 
 urxvtd -q -o -f
 xrdb -merge ~/.Xresources
+[[ -f ~/.Xresources-local ]] && xrdb -merge ~/.Xresources-local
 numlockx on&
 xmodmap ~/.xmodmap &
 
@@ -17,6 +18,12 @@ export VISUAL="emacsclient -c -n"
 export ALTERNATE_EDITOR=""
 
 export PATH=$PATH:~/bin:/usr/local/bin
+
+
+export GTK_IM_MODULE='uim'
+export QT_IM_MODULE='uim'
+uim-xim &
+export XMODIFIERS='@im=uim'
 
 ##### GNOME KEYRING STUFF
 # Start a D-Bus session
