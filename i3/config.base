@@ -153,7 +153,7 @@ bindsym $mod+Shift+R restart
 bindsym $mod+Shift+E exit
 
 #logout
-bindsym $mod+Shift+braceright exec /usr/lib/lightdm/lightdm/gdmflexiserver
+bindsym $mod+Shift+braceright exec dm-tool switch-to-greeter
 
 # default direction should be right, overload in local config to change
 set $DIRECTION right
@@ -192,6 +192,8 @@ for_window [class="EVE"] fullscreen
 
 assign [class="(?i)dota_linux"] → dota
 assign [class="(?i)steam"] → steam
+assign [title="Steam"] → steam
+assign [title="Progress"] → steam
 assign [class="(?i)mumble"] → mumble
 assign [class="(?i)chromium" instance="(?i)crx_nckgahadagoaajjgafhacjanaoiihapd"] → chat
 assign [class="(?i)pidgin"] → chat
@@ -199,6 +201,7 @@ assign [class="(?i)Line.exe"] → L
 assign [class="(?i)wine"] → wine
 assign [class="EVE"] → eve
 assign [class="(?i)game.x86_64"] → xcom
+assign [title="somafm"] → 11 somafm
 
 bindsym $mod+u exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
 bindsym $mod+i exec --no-startup-id ~/.i3/append_workspace_name.sh
