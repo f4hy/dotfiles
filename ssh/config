@@ -4,7 +4,7 @@ ForwardX11Trusted yes
 ForwardX11 yes
 User f4hy
 Ciphers arcfour,blowfish-cbc
-HostName home.f4hy.net 
+HostName home.f4hy.net
 
 Host erwin
 User bfahy
@@ -97,21 +97,21 @@ ForwardX11 no
 User bfahy
 HostName login4.stampede.tacc.utexas.edu
 
-Host sysmtema
+Host systema
 ServerAliveInterval 120
 ForwardX11Trusted no
 ForwardX11 no
 User bfahy
 HostName scfe.kek.jp
 
-Host sysmtemb1
+Host systemb1
 ServerAliveInterval 120
 ForwardX11Trusted no
 ForwardX11 no
 User bfahy
 HostName scfeb1.kek.jp
 
-Host sysmtemb2
+Host systemb2
 ServerAliveInterval 120
 ForwardX11Trusted no
 ForwardX11 no
