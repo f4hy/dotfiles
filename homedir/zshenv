@@ -1,0 +1,16 @@
+# .zshenv for setting varaibles
+
+# Editors
+if  [[ -n $SSH_CONNECTION ]]; then
+    export EDITOR="emacsclient -c"
+    export VISUAL="emacsclient -c"
+    export ALTERNATE_EDITOR=""
+else
+    export EDITOR="emacsclient -t"
+    export VISUAL="emacsclient -t"
+    export ALTERNATE_EDITOR=""
+fi
+
+
+typeset -U path
+path=(~/local/bin ~/bin /usr/local/bin $path)

@@ -1,0 +1,50 @@
+#  -*- mode: sh; -*-
+#
+# ~/.alaises my aliases
+#
+
+alias ls='ls -hF --color=auto'
+alias ll='ls -lhF --group-directories-first'
+alias la='ls -dAFh --color=auto .[^.]*'
+alias rtemp='rm *~'
+alias rm="rm -i"
+alias ec='emacsclient -c -n'
+alias et='emacsclient -t'
+
+if [ -f /etc/arch-release ]; then
+   alias update='yaourt -Syu --aur'
+   alias ncupdate='yaourt -Syu --noconfirm --aur'
+   alias rm="rm -I"             #better than rm -i but only in newer versions
+fi
+
+alias more='less'
+
+alias today='find -maxdepth 1 -type f -mtime -1'
+alias rs='rsync -av --progress'
+
+alias real='cd `pwd -P`'
+
+alias gwine='ps aux | grep -e wine -e exe'
+
+alias closeeve='killall -I exefile.exe'
+settitle() {
+    echo -ne "\033]0;${1}\007"
+}
+
+function my_ps() {
+	ps $@ -u $USER -o pid,%cpu,%mem,bsdtime,command ;
+}
+
+function namedcat() {
+    for i in $@ ; do echo $i; cat $i; done
+}
+
+
+function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
+
+#ZSH aliases
+alias -s txt=$EDITOR
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias -g L="| less"

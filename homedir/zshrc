@@ -1,9 +1,11 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=10000
+HISTSIZE=20000
 SAVEHIST=10000
 setopt appendhistory autocd beep extendedglob nomatch notify
 setopt share_history
+setopt hist_ignore_dups
+setopt hist_expire_dups_first
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
@@ -13,18 +15,8 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-[[ $- != *i* ]] && return
-
-# Editors
-if [ "$SSH_CONNECTION" = "" ]; then
-    export EDITOR="emacsclient -c"
-    export VISUAL="emacsclient -c"
-    export ALTERNATE_EDITOR=""
-else
-    export EDITOR="emacsclient -t"
-    export VISUAL="emacsclient -t"
-    export ALTERNATE_EDITOR=""
-fi
+# cool options
+setopt correct
 
 #colored grep
 export GREP_COLOR="1;33"
@@ -36,9 +28,13 @@ fi
 
 eval `dircolors -b`
 
+
 # Bash-like navigation
 autoload -U select-word-style
 select-word-style bash
+
+#allow '#' as comments inline
+setopt interactivecomments
 
 typeset -A key
 
@@ -66,7 +62,7 @@ key[PageDown]=${terminfo[knp]}
 [[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"   beginning-of-buffer-or-history
 [[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}" end-of-buffer-or-history
 
-source ~/.aliases
+source ~/.zaliases
 if [ -f ~/.localrc ]; then
 source ~/.localrc
 fi
