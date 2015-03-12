@@ -3,8 +3,8 @@ Port 443
 ForwardX11Trusted yes
 ForwardX11 yes
 User f4hy
-Ciphers arcfour,blowfish-cbc
-HostName home.f4hy.net
+#Ciphers arcfour,blowfish-cbc
+HostName f4hy.net
 
 Host erwin
 User bfahy
