@@ -63,6 +63,12 @@ key[PageDown]=${terminfo[knp]}
 [[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}" end-of-buffer-or-history
 
 source ~/.zaliases
+
+### SHOULD ONLY BE IN .zshenv but stupid arch overwites path after it is loaded
+typeset -U path
+path=(~/local/bin ~/bin /usr/local/bin $path)
+
+
 if [ -f ~/.localrc ]; then
 source ~/.localrc
 fi
