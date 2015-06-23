@@ -187,10 +187,12 @@ for_window [class="(?i)FrozenSynapse"] floating enable
 for_window [title="(?i)Outer Space 0.5"] floating enable
 for_window [class="Xfce4-notifyd"] floating enable; border none; focus mode_toggle
 for_window [class="(?i)dota_linux"] fullscreen
+for_window [class="(?i)dota2"] fullscreen
 for_window [class="(?i)chromium" instance="(?i)crx_nckgahadagoaajjgafhacjanaoiihapd"] border normal
 for_window [class="EVE"] fullscreen
 
 assign [class="(?i)dota_linux"] → dota
+assign [class="(?i)dota2"] → dota
 assign [class="(?i)steam"] → steam
 assign [class="(?i)mumble"] → mumble
 assign [class="(?i)chromium" instance="(?i)crx_nckgahadagoaajjgafhacjanaoiihapd"] → chat
