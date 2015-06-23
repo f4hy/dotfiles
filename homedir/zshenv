@@ -1,7 +1,7 @@
 # .zshenv for setting varaibles
 
 # Editors
-if  [[ -n $SSH_CONNECTION ]]; then
+if  [[ -z $SSH_CONNECTION ]]; then
     export EDITOR="emacsclient -c"
     export VISUAL="emacsclient -c"
     export ALTERNATE_EDITOR=""
