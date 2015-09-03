@@ -33,8 +33,8 @@ for_window [class="(?i)urxvt"] border 1pixel
 # kill focused window
 bindsym $mod+Shift+C kill
 
-bindsym $mod+Shift+l exec i3lock --image=/home/f4hy/.i3/lock.png
-exec --no-startup-id xautolock -time 30 -locker 'i3lock -i /home/f4hy/.i3/lock.png'
+bindsym $mod+Shift+l exec i3lock -t -i ~/.i3/lock.png
+exec --no-startup-id xautolock -time 30 -locker 'i3lock -t -i ~/.i3/lock.png'
 # start dmenu (a program launcher)
 bindsym $mod+p exec dmenu_run
 bindsym $mod+Shift+P exec quickswitch.py
@@ -44,7 +44,7 @@ bindsym $mod+f exec chromium
 bindsym $mod+t exec emacsclient -c -n
 
 #startup
-exec --no-startup-id /home/f4hy/bin/startup.sh
+exec --no-startup-id ~/bin/startup.sh
 
 
 bindsym $mod+l resize grow width 10 px or 10 ppt
@@ -82,6 +82,7 @@ bindsym Mod1+Control+Right workspace next_on_output
 bindsym Mod1+Control+Left workspace prev_on_output
 bindsym $mod+Mod1+n exec quickswitch.py -e
 bindsym $mod+Mod1+m exec quickswitch.py -m
+bindsym $mod+Mod1+j exec quickswitch.py -j -e
 
 # split in horizontal orientation
 bindsym $mod+Shift+h split h
@@ -190,12 +191,14 @@ for_window [class="(?i)dota_linux"] fullscreen
 for_window [class="(?i)dota2"] fullscreen
 for_window [class="(?i)chromium" instance="(?i)crx_nckgahadagoaajjgafhacjanaoiihapd"] border normal
 for_window [class="EVE"] fullscreen
+for_window [class="(?i)chromium" instance="(?i)crx_fahmaaghhglfmonjliepjlchgpgfmobi"] floating enable
 
 assign [class="(?i)dota_linux"] → dota
 assign [class="(?i)dota2"] → dota
 assign [class="(?i)steam"] → steam
 assign [class="(?i)mumble"] → mumble
 assign [class="(?i)chromium" instance="(?i)crx_nckgahadagoaajjgafhacjanaoiihapd"] → chat
+assign [class="(?i)chromium" instance="(?i)crx_knipolnnllmklapflnccelgolnpehhpl"] → chat
 assign [class="(?i)pidgin"] → chat
 assign [class="(?i)Line.exe"] → L
 assign [class="(?i)wine"] → wine
