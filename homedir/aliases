@@ -41,3 +41,5 @@ function namedcat() {
 
 
 function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
+
+function tpb() { wget -U Mozilla -qO - $(echo "http://thepiratebay.org/search/$@/0/7/0" | sed 's/ /\%20/g') | grep -o 'http\:\/\/torrents\.thepiratebay\.org\/.*\.torrent' | tac; }

@@ -153,7 +153,7 @@ bindsym $mod+Shift+R restart
 bindsym $mod+Shift+E exit
 
 #logout
-bindsym $mod+Shift+braceright exec /usr/lib/lightdm/lightdm/gdmflexiserver
+bindsym $mod+Shift+braceright exec dm-tool switch-to-greeter
 
 # default direction should be right, overload in local config to change
 set $DIRECTION right
@@ -163,8 +163,8 @@ bindsym $mod+grave move window to output $DIRECTION; focus output $DIRECTION
 bindsym $mod+Shift+grave move workspace to output $DIRECTION
 bindsym $mod+Mod1+KP_Add exec --no-startup-id toggle-monitor.sh
 
-bindsym $mod+KP_Add exec ~/bin/switch_audio.sh 0
-bindsym $mod+KP_Subtract exec ~/bin/switch_audio.sh 1
+bindsym $mod+KP_Add exec ~/bin/switch_audio.sh pci
+bindsym $mod+KP_Subtract exec ~/bin/switch_audio.sh headphones
 bindsym $mod+o exec pavucontrol
 
 # Make the currently focused window a scratchpad
@@ -187,10 +187,12 @@ for_window [class="(?i)FrozenSynapse"] floating enable
 for_window [title="(?i)Outer Space 0.5"] floating enable
 for_window [class="Xfce4-notifyd"] floating enable; border none; focus mode_toggle
 for_window [class="(?i)dota_linux"] fullscreen
+for_window [class="(?i)dota2"] fullscreen
 for_window [class="(?i)chromium" instance="(?i)crx_nckgahadagoaajjgafhacjanaoiihapd"] border normal
 for_window [class="EVE"] fullscreen
 
 assign [class="(?i)dota_linux"] → dota
+assign [class="(?i)dota2"] → dota
 assign [class="(?i)steam"] → steam
 assign [class="(?i)mumble"] → mumble
 assign [class="(?i)chromium" instance="(?i)crx_nckgahadagoaajjgafhacjanaoiihapd"] → chat
