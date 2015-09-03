@@ -14,3 +14,7 @@
 	status = auto
 	branch = auto
 	ui = auto
+[github]
+	user = f4hy
+	password = ae7e8684ec39723bb119912d205dd5120670b529
+	oauth-token = ae7e8684ec39723bb119912d205dd5120670b529
