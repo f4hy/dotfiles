@@ -26,6 +26,8 @@ alias real='cd `pwd -P`'
 
 alias gwine='ps aux | grep -e wine -e exe'
 
+alias egrep="egrep --color=auto "
+
 alias closeeve='killall -I exefile.exe'
 settitle() {
     echo -ne "\033]0;${1}\007"
@@ -41,3 +43,6 @@ function namedcat() {
 
 
 function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
+
+function tpb() { wget -U Mozilla -qO - $(echo "http://thepiratebay.org/search/$@/0/7/0" | sed 's/ /\%20/g') | grep -o 'http\:\/\/torrents\.thepiratebay\.org\/.*\.torrent' | tac; }
+function hilight() {grep --color -E "${1}|$"}

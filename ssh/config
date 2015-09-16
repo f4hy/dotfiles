@@ -13,6 +13,11 @@ ForwardX11Trusted no
 ForwardX11 no
 Hostname erwin.phys.cmu.edu
 
+Host emilio
+User bfahy
+ForwardX11Trusted no
+ForwardX11 no
+Hostname emilio.phys.cmu.edu
 Host wilson
 User bfahy
 ForwardX11Trusted yes
@@ -125,6 +130,13 @@ ForwardX11Trusted no
 ForwardX11 no
 User bfahy
 HostName bfahy.kek.jp
+
+Host suchix
+ServerAliveInterval 120
+ForwardX11Trusted no
+ForwardX11 no
+User fahy
+HostName suchix.kek.jp
 
 Host wifihome
 Port 443
