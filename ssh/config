@@ -18,7 +18,6 @@ User bfahy
 ForwardX11Trusted no
 ForwardX11 no
 Hostname emilio.phys.cmu.edu
-
 Host wilson
 User bfahy
 ForwardX11Trusted yes
@@ -138,3 +137,12 @@ ForwardX11Trusted no
 ForwardX11 no
 User fahy
 HostName suchix.kek.jp
+
+Host wifihome
+Port 443
+ForwardX11Trusted yes
+ForwardX11 yes
+ServerAliveInterval 60
+User f4hy
+Ciphers arcfour,blowfish-cbc
+HostName 192.168.1.2

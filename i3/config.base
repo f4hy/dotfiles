@@ -154,7 +154,7 @@ bindsym $mod+Shift+R restart
 bindsym $mod+Shift+E exit
 
 #logout
-bindsym $mod+Shift+braceright exec /usr/lib/lightdm/lightdm/gdmflexiserver
+bindsym $mod+Shift+braceright exec dm-tool switch-to-greeter
 
 # default direction should be right, overload in local config to change
 set $DIRECTION right
@@ -164,8 +164,8 @@ bindsym $mod+grave move window to output $DIRECTION; focus output $DIRECTION
 bindsym $mod+Shift+grave move workspace to output $DIRECTION
 bindsym $mod+Mod1+KP_Add exec --no-startup-id toggle-monitor.sh
 
-bindsym $mod+KP_Add exec ~/bin/switch_audio.sh 0
-bindsym $mod+KP_Subtract exec ~/bin/switch_audio.sh 1
+bindsym $mod+KP_Add exec ~/bin/switch_audio.sh pci
+bindsym $mod+KP_Subtract exec ~/bin/switch_audio.sh headphones
 bindsym $mod+o exec pavucontrol
 
 # Make the currently focused window a scratchpad
