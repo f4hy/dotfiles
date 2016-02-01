@@ -41,6 +41,10 @@ function namedcat() {
     for i in $@ ; do echo $i; cat $i; done
 }
 
+function inlinenamedcat() {
+    for i in $@ ; do echo -n $i "\t"; cat $i; done
+}
+
 
 function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
 
