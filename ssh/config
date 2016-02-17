@@ -138,3 +138,11 @@ ForwardX11Trusted no
 ForwardX11 no
 User fahy
 HostName suchix.kek.jp
+
+Host wifihome
+Port 443
+ForwardX11Trusted yes
+ForwardX11 yes
+ServerAliveInterval 60
+User f4hy
+HostName 192.168.1.2
