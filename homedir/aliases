@@ -28,6 +28,8 @@ alias gwine='ps aux | grep -e wine -e exe'
 
 alias egrep="egrep --color=auto "
 
+alias rmdirtree="find . -type d -empty -delete"
+
 alias closeeve='killall -I exefile.exe'
 settitle() {
     echo -ne "\033]0;${1}\007"

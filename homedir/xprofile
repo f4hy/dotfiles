@@ -9,7 +9,11 @@ xset -b
 
 urxvtd -q -o -f
 
-USRRESOURCES=$HOME/.Xresources
+xrandr --primary --output DVI-I-2
+#start the emacs daemon
+#emacs --daemon
+
+xsetroot -cursor_name left_ptr -solid '#090909' &
 
 xrdb -merge ~/.Xresources
 
@@ -23,10 +27,15 @@ export ALTERNATE_EDITOR=""
 
 export PATH=$PATH:~/bin:/usr/local/bin
 
+PATH=$PATH:~/bin:/usr/local/bin
+
+export VDPAU_NVIDIA_NO_OVERLAY=1
 export GTK_IM_MODULE='uim'
 export QT_IM_MODULE='uim'
 uim-xim &
 export XMODIFIERS='@im=uim'
+
+xset dpms 14400 14400 14800
 
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT_INFO SSH_AUTH_SOCK

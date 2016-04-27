@@ -34,7 +34,7 @@ for_window [class="(?i)urxvt"] border 1pixel
 bindsym $mod+Shift+C kill
 
 bindsym $mod+Shift+l exec ~/.i3/fuzzy_lock.sh
-exec_always --no-startup-id xautolock -time 30 -locker 'dm-tool switch-to-greeter' -notify 30 -notifier "notify-send -u critical -t 3000 -- 'LOCKING screen in 30 seconds'"
+# exec_always --no-startup-id xautolock -time 30 -locker 'dm-tool switch-to-greeter' -notify 30 -notifier "notify-send -t 2000 -- 'LOCKING screen in 30 seconds'"
 
 # start dmenu (a program launcher)
 bindsym $mod+p exec dmenu_run
@@ -155,7 +155,9 @@ bindsym $mod+Shift+R restart
 bindsym $mod+Shift+E exit
 
 #logout
-bindsym $mod+Shift+braceright exec xautolock -locknow
+#bindsym $mod+Shift+braceright exec xautolock -locknow
+bindsym $mod+Shift+braceright exec dm-tool switch-to-greeter
+bindsym F8 exec dm-tool switch-to-greeter
 
 # default direction should be right, overload in local config to change
 set $DIRECTION right
@@ -192,7 +194,6 @@ for_window [class="(?i)dota_linux"] fullscreen
 for_window [class="(?i)dota2"] fullscreen
 for_window [class="(?i)chromium" instance="(?i)crx_nckgahadagoaajjgafhacjanaoiihapd"] border normal
 for_window [class="EVE"] fullscreen
-for_window [class="(?i)chromium" instance="(?i)crx_fahmaaghhglfmonjliepjlchgpgfmobi"] floating enable
 
 assign [class="(?i)dota_linux"] → dota
 assign [class="(?i)dota2"] → dota
