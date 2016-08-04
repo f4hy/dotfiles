@@ -194,6 +194,7 @@ for_window [class="(?i)dota_linux"] fullscreen
 for_window [class="(?i)dota2"] fullscreen
 for_window [class="(?i)chromium" instance="(?i)crx_nckgahadagoaajjgafhacjanaoiihapd"] border normal
 for_window [class="EVE"] fullscreen
+for_window [class="(?i)plexhometheater"] fullscreen
 
 assign [class="(?i)dota_linux"] → dota
 assign [class="(?i)dota2"] → dota
