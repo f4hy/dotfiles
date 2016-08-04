@@ -9,12 +9,9 @@ xset -b
 
 urxvtd -q -o -f
 
-xrandr --primary --output DVI-I-2
-#start the emacs daemon
-#emacs --daemon
-
 xsetroot -cursor_name left_ptr -solid '#090909' &
 
+USRRESOURCES=$HOME/.Xresources
 xrdb -merge ~/.Xresources
 
 [[ -f ~/.Xresources-local ]] && xrdb -merge ~/.Xresources-local
