@@ -15,13 +15,16 @@ if [[ $# -gt 1 ]]; then
     usage
 fi
 
-if [[ $1 == "noconfirm" ]]; then
-    NOCONFIRM=1
-elif [[ $1 != "" ]]; then
-    echo "argument '$1' not recognized"
-    usage
+if [[ $# -eq 0 ]]; then
+    NOCONFIRM=0
+else
+    if [[ $1 == "noconfirm" ]]; then
+        NOCONFIRM=1
+    elif [[ $1 != "" ]]; then
+        echo "argument '$1' not recognized"
+        usage
+    fi
 fi
-
 
 prompt(){
 
@@ -41,7 +44,7 @@ update_arch(){
     fi
 
     if [ -f /etc/arch-release ]; then
-        echo "arch system found"
+        echo "arch system found, updating packages"
     else
         echo "Not an arch system"
         return
