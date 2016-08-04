@@ -30,6 +30,20 @@ backup_folder(){
     done
 }
 
+backup_nondotfolder(){
+    FOLDER=$1
+    echo "making backup of ${FOLDER}"
+    echo "backing up to ${BACKUPDIR}${FOLDER}_"
+    mkdir -p ${BACKUPDIR}
+    for f in ${FOLDER}/*; do
+        name=$(basename $f)
+        echo $name
+        ls ~/${FOLDER}/${name}
+        cp ~/${FOLDER}/${name} ${BACKUPDIR}${FOLDER}_${name}
+    done
+}
+
+
 install_homedir() {
     echo "installing"
     for f in homedir/*; do
@@ -46,6 +60,16 @@ install_folder() {
         name=$(basename $f)
         echo "copying ${f} to ~/.${FOLDER}/${name}"
         cp -v ${f} ~/.${FOLDER}/${name}
+    done
+}
+
+install_nondotfolder() {
+    FOLDER=$1
+    echo "installing ${FOLDER}"
+    for f in ${FOLDER}/*; do
+        name=$(basename $f)
+        echo "copying ${f} to ~/${FOLDER}/${name}"
+        cp -u -v ${f} ~/${FOLDER}/${name}
     done
 }
 
@@ -86,6 +110,8 @@ backup_folder "ssh"
 install_folder "ssh"
 backup_folder "i3"
 install_folder "i3"
+backup_nondotfolder "bin"
+install_nondotfolder "bin"
 setup_i3
 setup_ssh
 setup_liquidprompt
