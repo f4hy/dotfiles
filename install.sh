@@ -55,8 +55,7 @@ setup_liquidprompt(){
         echo "$HOME/local/liquidprompt exists!"
         read -p "Would you like to update the liquidprompt in ~/local ? " -n 1 -r
         echo    # (optional) move to a new line
-        if [[ $REPLY =~ ^[Yy]$ ]]
-        then
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
             pushd ~/local/liquidprompt/
             git pull
             popd
@@ -64,8 +63,7 @@ setup_liquidprompt(){
     else
         read -p "Would you like to install the liquidprompt to ~/local ? " -n 1 -r
         echo    # (optional) move to a new line
-        if [[ $REPLY =~ ^[Yy]$ ]]
-        then
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
             mkdir -p ~/local
             pushd ~/local
             git clone https://github.com/nojhan/liquidprompt.git
