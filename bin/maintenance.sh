@@ -111,6 +111,15 @@ update_gpgkeys(){
     gpg --refresh-keys
 }
 
+vacuum_journal(){
+
+    prompt "Vacuum Systemd journal to only the last 2 weeks?"
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        sudo journalctl --vacuum-time=2weeks
+    fi
+}
+
+
 remove_cruft(){
 
     prompt "empty .local/share/Trash?"
@@ -142,11 +151,12 @@ remove_cruft(){
 }
 
 echo "Which task"
-TASKS="update_arch update_locate update_pips update_gpgkeys remove_cruft"
-select TASK in "all" $TASKS "done"; do
+AUTOTASKS="update_arch update_locate update_pips update_gpgkeys vacuum_journal"
+OTHERTASKS="remove_cruft"
+select TASK in "all" $AUTOTASKS $OTHERTASKS "done"; do
     case $TASK in
         "all")
-            for i in $TASKS; do
+            for i in $AUTOTASKS; do
                 $i
             done
             break
