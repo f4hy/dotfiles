@@ -111,8 +111,38 @@ update_gpgkeys(){
     gpg --refresh-keys
 }
 
+remove_cruft(){
+
+    prompt "empty .local/share/Trash?"
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        rm -rf ${HOME}/.local/share/Trash/*
+    fi
+
+    EMPTYFILES=$(find . -maxdepth 2 -type f -empty -ls)
+    prompt "remove empty files (maxdepth 2) $EMPTYFILES \n"
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        find . -maxdepth 2 -type f -empty -delete
+    fi
+
+    echo "finding *~ temp files"
+    for tmpfile in $(find $HOME -path ${HOME}/Dropbox/emacs.d/auto-save-list -prune -o -type f -name "*~"  -print); do
+        echo $tmpfile
+        ORIG=${tmpfile%\~}
+        if [[ -e $ORIG ]]; then
+            ls -axl --color=auto $tmpfile $ORIG
+            #cmp --silent $tmpfile $ORIG && echo "tmp file same as original!!" && rm $tmpfile
+            git diff $ORIG $tmpfile || echo "rm $tmpfile?"
+            rm -i $tmpfile
+        else
+            echo "$ORIG file missing"
+            cat $tmpfile
+        fi
+        #exit
+    done
+}
+
 echo "Which task"
-TASKS="update_arch update_locate update_pips update_gpgkeys"
+TASKS="update_arch update_locate update_pips update_gpgkeys remove_cruft"
 select TASK in "all" $TASKS "done"; do
     case $TASK in
         "all")
