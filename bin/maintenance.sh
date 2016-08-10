@@ -134,8 +134,9 @@ remove_cruft(){
     fi
 
     echo "finding *~ temp files"
-    for tmpfile in $(find $HOME -path ${HOME}/Dropbox/emacs.d/auto-save-list -prune -o -type f -name "*~"  -print); do
-        echo $tmpfile
+    find $HOME -path ${HOME}/Dropbox/emacs.d/auto-save-list -prune -o -type f -name "*~" | while read tmpfile
+    do
+        echo "$tmpfile"
         ORIG=${tmpfile%\~}
         if [[ -e $ORIG ]]; then
             ls -axl --color=auto $tmpfile $ORIG
@@ -144,7 +145,7 @@ remove_cruft(){
             rm -i $tmpfile
         else
             echo "$ORIG file missing"
-            cat $tmpfile
+            cat "$tmpfile"
         fi
         #exit
     done
