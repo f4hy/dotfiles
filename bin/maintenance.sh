@@ -32,7 +32,7 @@ prompt(){
         REPLY='y'
     else
         read -p "$1" -n 1 -r
-        echo "\n"
+        echo ""
     fi
 }
 
@@ -98,15 +98,36 @@ update_pips(){
 }
 
 update_locate(){
-    prompt "Updating located DB"
+    prompt "Update locate DB?"
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         sudo updatedb
-        echo "Updated located DB"
+        echo "Updated locate DB"
     fi
 }
 
-update_arch
+update_gpgkeys(){
 
-update_locate
+    echo "refreshing keys"
+    gpg --refresh-keys
+}
 
-update_pips
+echo "Which task"
+TASKS="update_arch update_locate update_pips update_gpgkeys"
+select TASK in "all" $TASKS "done"; do
+    case $TASK in
+        "all")
+            for i in $TASKS; do
+                $i
+            done
+            break
+            ;;
+        "done")
+            break
+            ;;
+        *) echo "Running $TASK"
+            $TASK
+            echo "Done with $TASK"
+            echo "Choose another or exit (ENTER to show options again)"
+            ;;
+    esac
+done
