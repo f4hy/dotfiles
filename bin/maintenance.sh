@@ -36,6 +36,17 @@ prompt(){
     fi
 }
 
+systemd_checks(){
+    echo "Failed systemd units?"
+    systemctl --failed
+
+    prompt "Check for errors in journal?"
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        journalctl -p 3 -xb
+    fi
+
+}
+
 update_arch(){
 
     EXTRAFLAGS=""
@@ -127,6 +138,11 @@ remove_cruft(){
         rm -rf ${HOME}/.local/share/Trash/*
     fi
 
+    prompt "check for broken symlinks?"
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        find . -type l -! -exec test -e {} \; -print
+    fi
+
     EMPTYFILES=$(find . -maxdepth 2 -type f -empty -ls)
     prompt "remove empty files (maxdepth 2) $EMPTYFILES \n"
     if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -153,7 +169,7 @@ remove_cruft(){
 
 echo "Which task"
 AUTOTASKS="update_arch update_locate update_pips update_gpgkeys vacuum_journal"
-OTHERTASKS="remove_cruft"
+OTHERTASKS="remove_cruft systemd_checks"
 select TASK in "all" $AUTOTASKS $OTHERTASKS "done"; do
     case $TASK in
         "all")
