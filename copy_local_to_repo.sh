@@ -27,7 +27,17 @@ copy_folder() {
     done
 }
 
+copy_nondotfolder() {
+    FOLDER=$1
+    echo "copying ${FOLDER}"
+    for f in ${FOLDER}/*; do
+        name=$(basename $f)
+        rsync $RSYNCOPTS ~/${FOLDER}/${name} ${f}
+    done
+}
+
 
 copy_homedir
 copy_folder "i3"
 copy_folder "ssh"
+copy_nondotfolder "bin"

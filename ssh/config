@@ -4,7 +4,6 @@ ForwardX11Trusted yes
 ForwardX11 yes
 ServerAliveInterval 60
 User f4hy
-#Ciphers arcfour,blowfish-cbc
 HostName f4hy.net
 
 Host erwin
@@ -18,6 +17,7 @@ User bfahy
 ForwardX11Trusted no
 ForwardX11 no
 Hostname emilio.phys.cmu.edu
+
 Host wilson
 User bfahy
 ForwardX11Trusted yes
@@ -144,5 +144,4 @@ ForwardX11Trusted yes
 ForwardX11 yes
 ServerAliveInterval 60
 User f4hy
-Ciphers arcfour,blowfish-cbc
-HostName 192.168.1.2
+HostName 192.168.11.2
