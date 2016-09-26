@@ -22,6 +22,10 @@ setopt correct
 export GREP_COLOR="1;33"
 alias grep='grep --color=auto'
 
+export LP_PS1_POSTFIX="
+>"
+
+
 #emacs likes this
 export TERM=xterm-256color
 
