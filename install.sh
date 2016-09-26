@@ -88,7 +88,7 @@ install_symlink() {
 setup_liquidprompt(){
     if [ -d "$HOME/local/liquidprompt/" ]; then
         echo "$HOME/local/liquidprompt exists!"
-        wylt=Would you like to
+        wylt="Would you like to"
         read -p "$wylt update the liquidprompt in ~/local ? " -n 1 -r
         echo    # (optional) move to a new line
         if [[ $REPLY =~ ^[Yy]$ ]]; then
