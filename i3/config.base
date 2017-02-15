@@ -38,7 +38,7 @@ bindsym $mod+Shift+l exec ~/.i3/fuzzy_lock.sh
 
 # start dmenu (a program launcher)
 bindsym $mod+p exec dmenu_run
-bindsym $mod+Shift+P exec quickswitch.py
+bindsym $mod+Shift+P exec quickswitch
 
 # launch programs
 bindsym $mod+f exec chromium
@@ -81,9 +81,9 @@ bindsym $mod+Mod1+f workspace next_on_output
 bindsym $mod+Mod1+b workspace prev_on_output
 bindsym Mod1+Control+Right workspace next_on_output
 bindsym Mod1+Control+Left workspace prev_on_output
-bindsym $mod+Mod1+n exec quickswitch.py -e
-bindsym $mod+Mod1+m exec quickswitch.py -m
-bindsym $mod+Mod1+j exec quickswitch.py -j -e
+bindsym $mod+Mod1+n exec quickswitch -e
+bindsym $mod+Mod1+m exec quickswitch -m
+bindsym $mod+Mod1+j exec quickswitch -j -e
 
 # split in horizontal orientation
 bindsym $mod+Shift+h split h
