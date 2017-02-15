@@ -73,11 +73,23 @@ install_nondotfolder() {
     done
 }
 
+install_symlink() {
+    FOLDER=$1
+    echo "installing ${FOLDER}"
+    for f in ${FOLDER}/*; do
+        name=$(basename $f)
+        echo "linking ${f} to ~/${FOLDER}/${name}"
+        echo $(realpath $f)
+        ln -s $(realpath $f) $HOME/${FOLDER}/${name}
+    done
+}
+
 
 setup_liquidprompt(){
     if [ -d "$HOME/local/liquidprompt/" ]; then
         echo "$HOME/local/liquidprompt exists!"
-        read -p "Would you like to update the liquidprompt in ~/local ? " -n 1 -r
+        wylt="Would you like to"
+        read -p "$wylt update the liquidprompt in ~/local ? " -n 1 -r
         echo    # (optional) move to a new line
         if [[ $REPLY =~ ^[Yy]$ ]]; then
             pushd ~/local/liquidprompt/
@@ -85,7 +97,7 @@ setup_liquidprompt(){
             popd
         fi
     else
-        read -p "Would you like to install the liquidprompt to ~/local ? " -n 1 -r
+        read -p "$wylt install the liquidprompt to ~/local ? " -n 1 -r
         echo    # (optional) move to a new line
         if [[ $REPLY =~ ^[Yy]$ ]]; then
             mkdir -p ~/local
@@ -110,8 +122,9 @@ backup_folder "ssh"
 install_folder "ssh"
 backup_folder "i3"
 install_folder "i3"
-backup_nondotfolder "bin"
-install_nondotfolder "bin"
+# backup_nondotfolder "bin"
+# install_nondotfolder "bin"
+install_symlink "bin"
 setup_i3
 setup_ssh
 setup_liquidprompt
