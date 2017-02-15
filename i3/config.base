@@ -193,6 +193,7 @@ for_window [class="Xfce4-notifyd"] floating enable; border none; focus mode_togg
 for_window [class="(?i)dota_linux"] fullscreen
 for_window [class="(?i)dota2"] fullscreen
 for_window [class="(?i)chromium" instance="(?i)crx_nckgahadagoaajjgafhacjanaoiihapd"] border normal
+for_window [class="(?i)chromium" instance="(?i)crx_knipolnnllmklapflnccelgolnpehhpl"] floating disable
 for_window [class="EVE"] fullscreen
 for_window [class="(?i)plexhometheater"] fullscreen
 
