@@ -7,6 +7,11 @@
 # you can load the corresponding files here:
 #source ~/.config/liquidprompt/nojhan.theme
 #LP_PS1_FILE=~/.config/liquidprompt/nojhan.ps1
+LP_PS1_POSTFIX="\a\n>"
+if [ -n "$ZSH_VERSION" ]; then
+LP_PS1_POSTFIX="%{$(echo "\a")%}
+>"
+fi
 
 #############
 # BEHAVIOUR #
@@ -71,7 +76,7 @@ LP_ENABLE_JOBS=1
 # Recommended value is 1
 LP_ENABLE_LOAD=1
 
-# Do you want to use the batt feature ?
+# Do you want to use the battery feature?
 # Recommended value is 1
 LP_ENABLE_BATT=1
 
@@ -96,11 +101,11 @@ LP_ENABLE_SVN=0
 # Recommended value is 1
 LP_ENABLE_HG=0
 
-# Do you want to use the fossil special features ?
+# Do you want to use the Fossil special features?
 # Recommended value is 1
 LP_ENABLE_FOSSIL=0
 
-# Do you want to use the bzr special features ?
+# Do you want to use the Bazaar special features?
 # Recommanded value is 1
 LP_ENABLE_BZR=0
 
@@ -120,6 +125,10 @@ LP_RUNTIME_THRESHOLD=2
 # Recommended value is 1
 LP_ENABLE_VIRTUALENV=1
 
+# Display the enabled software collections, if any
+# Recommended value is 1
+LP_ENABLE_SCLS=1
+
 # Show average system temperature
 LP_ENABLE_TEMP=1
 
@@ -130,8 +139,9 @@ LP_ENABLE_TEMP=1
 # Recommended value is 0
 LP_TIME_ANALOG=0
 
-# Use the liquid prompt as the title of the terminal window
-# This may not work properly on exotic terminals, thus the
+# Use the prompt as the title of the terminal window
+# The content is not customizable, the implementation is very basic,
+# and this may not work properly on exotic terminals, thus the
 # recommended value is 0
 # See LP_TITLE_OPEN and LP_TITLE_CLOSE to change escape characters to adapt this
 # feature to your specific terminal.
