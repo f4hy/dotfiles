@@ -44,7 +44,7 @@ Xcursor.size: 16
 
 ! Copied URxvg settings --------------------------------------------------
 ! URxvt.geometry: 80x25
-URxvt.font: xft:DejaVu Sans Mono:pixelsize=15:antialias=true
+URxvt.font: xft:DejaVu Sans Mono:pixelsize=22:antialias=true
 urxvt*urgentOnBell:       true
 ! URxvt*inheritPixmap: true
 ! URxvt*tintColor: gray30
@@ -96,11 +96,11 @@ URxvt.colorUL:      #87afd7
 
 ! Xft settings ---------------------------------------------------------------
 
-Xft.dpi:        96
+Xft.dpi:        120
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true
-Xft.hintstyle:  hintslight
+Xft.hintstyle:  hintfull
 !Xft*hintstyle: hintfull
 
 ! xpdf -----------------------------------------------------------------------
