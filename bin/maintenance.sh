@@ -167,7 +167,7 @@ remove_cruft(){
     done
 }
 
-echo "Which task (or q to quit)"
+echo "Which task"
 AUTOTASKS="update_arch update_locate update_pips update_gpgkeys vacuum_journal"
 OTHERTASKS="remove_cruft systemd_checks"
 select TASK in "all" $AUTOTASKS $OTHERTASKS "done"; do
@@ -181,17 +181,10 @@ select TASK in "all" $AUTOTASKS $OTHERTASKS "done"; do
         "done")
             break
             ;;
-        "")
-            if [[ $REPLY =~ ^[Qq]$ ]]; then
-                echo "quitting"
-                break
-            fi
-            echo "Invalid Selection"
-            ;;
         *) echo "Running $TASK"
-           $TASK
-           echo "Done with $TASK"
-           echo "Choose another or exit (ENTER to show options again)"
-           ;;
+            $TASK
+            echo "Done with $TASK"
+            echo "Choose another or exit (ENTER to show options again)"
+            ;;
     esac
 done

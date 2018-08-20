@@ -63,7 +63,6 @@ HostName ponting.sdsu.edu
 ForwardX11Trusted yes
 Host cmu
 User bfahy
-Ciphers arcfour,blowfish-cbc
 HostName qwe8.phys.cmu.edu
 
 Host kraken
@@ -145,3 +144,23 @@ ForwardX11 yes
 ServerAliveInterval 60
 User f4hy
 HostName 192.168.11.2
+
+Host raspberry
+Port 22
+ForwardX11Trusted yes
+ForwardX11 yes
+ServerAliveInterval 60
+User pi
+HostName 192.168.1.66
+
+Host atmion-orchestrator-prod
+Port 22
+ForwardX11 no
+User fahy
+HostName 35.184.78.37
+
+Host atmion-orchestrator-fahytest
+Port 22
+ForwardX11 no
+User fahy
+HostName 35.184.111.154

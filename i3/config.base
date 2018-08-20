@@ -27,6 +27,7 @@ new_float normal
 bindsym $mod+m border toggle
 # bindsym $mod+n bar mode toggle
 for_window [class="Chromium"] border none
+for_window [class="Firefox"] border none
 for_window [class="(?i)emacs"] border 1pixel
 for_window [class="(?i)urxvt"] border 1pixel
 
@@ -81,6 +82,8 @@ bindsym $mod+Mod1+f workspace next_on_output
 bindsym $mod+Mod1+b workspace prev_on_output
 bindsym Mod1+Control+Right workspace next_on_output
 bindsym Mod1+Control+Left workspace prev_on_output
+bindsym $mod+Control+Right workspace next_on_output
+bindsym $mod+Control+Left workspace prev_on_output
 bindsym $mod+Mod1+n exec quickswitch -e
 bindsym $mod+Mod1+m exec quickswitch -m
 bindsym $mod+Mod1+j exec quickswitch -j -e
@@ -209,6 +212,8 @@ assign [class="(?i)wine"] → wine
 assign [class="EVE"] → eve
 assign [class="(?i)game.x86_64"] → xcom
 assign [class="(?i)RocketLeague"] → rleague
+assign [class="(?i)RocketLeague"] → rleague
+assign [class="(?i)Battle.net.exe"] → bnet
 
 bindsym $mod+u exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
 bindsym $mod+i exec --no-startup-id ~/.i3/append_workspace_name.sh

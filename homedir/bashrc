@@ -63,3 +63,7 @@ source ~/.aliases
 if [ -f ~/.localrc ]; then
 source ~/.localrc
 fi
+
+export PATH=$PATH:/home/f4hy/bin
+
+source '/home/f4hy/lib/azure-cli/az.completion'
