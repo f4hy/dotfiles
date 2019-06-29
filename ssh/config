@@ -6,32 +6,6 @@ ServerAliveInterval 60
 User f4hy
 HostName f4hy.net
 
-Host erwin
-User bfahy
-ForwardX11Trusted no
-ForwardX11 no
-Hostname erwin.phys.cmu.edu
-
-Host emilio
-User bfahy
-ForwardX11Trusted no
-ForwardX11 no
-Hostname emilio.phys.cmu.edu
-
-Host wilson
-User bfahy
-ForwardX11Trusted yes
-ForwardX11 yes
-Hostname wilson.phys.cmu.edu
-
-Host albert
-User bfahy
-HostName albert.phys.cmu.edu
-
-Host max
-User bfahy
-HostName max.phys.cmu.edu
-
 Host f4hy.com
 User f4hy_f4hycom
 HostName ssh.phx.nearlyfreespeech.net
@@ -52,90 +26,6 @@ Host freepaper
 User f4hy_freeblankpaper
 Hostname ssh.phx.nearlyfreespeech.net
 
-Host gilchrist
-User bfahy
-HostName gilchrist.sdsu.edu
-ForwardX11Trusted yes
-
-Host ponting
-User bfahy
-HostName ponting.sdsu.edu
-ForwardX11Trusted yes
-Host cmu
-User bfahy
-HostName qwe8.phys.cmu.edu
-
-Host kraken
-User bfahy
-ForwardX11Trusted no
-ForwardX11 no
-Compression yes
-HostName kraken.nics.utk.edu
-
-Host stampede
-ForwardX11Trusted no
-ForwardX11 no
-User bfahy
-HostName stampede.tacc.utexas.edu
-
-Host stampede1
-ForwardX11Trusted no
-ForwardX11 no
-User bfahy
-HostName login1.stampede.tacc.utexas.edu
-
-Host stampede2
-ForwardX11Trusted no
-ForwardX11 no
-User bfahy
-HostName login2.stampede.tacc.utexas.edu
-
-Host stampede3
-ForwardX11Trusted no
-ForwardX11 no
-User bfahy
-HostName login3.stampede.tacc.utexas.edu
-
-Host stampede4
-ForwardX11Trusted no
-ForwardX11 no
-User bfahy
-HostName login4.stampede.tacc.utexas.edu
-
-Host systema
-ServerAliveInterval 120
-ForwardX11Trusted no
-ForwardX11 no
-User bfahy
-HostName scfe.kek.jp
-
-Host systemb1
-ServerAliveInterval 120
-ForwardX11Trusted no
-ForwardX11 no
-User bfahy
-HostName scfeb1.kek.jp
-
-Host systemb2
-ServerAliveInterval 120
-ForwardX11Trusted no
-ForwardX11 no
-User bfahy
-HostName scfeb2.kek.jp
-
-Host work
-ServerAliveInterval 120
-ForwardX11Trusted no
-ForwardX11 no
-User bfahy
-HostName bfahy.kek.jp
-
-Host suchix
-ServerAliveInterval 120
-ForwardX11Trusted no
-ForwardX11 no
-User fahy
-HostName suchix.kek.jp
 
 Host wifihome
 Port 443
@@ -147,20 +37,6 @@ HostName 192.168.11.2
 
 Host raspberry
 Port 22
-ForwardX11Trusted yes
-ForwardX11 yes
 ServerAliveInterval 60
 User pi
 HostName 192.168.1.66
-
-Host atmion-orchestrator-prod
-Port 22
-ForwardX11 no
-User fahy
-HostName 35.184.78.37
-
-Host atmion-orchestrator-fahytest
-Port 22
-ForwardX11 no
-User fahy
-HostName 35.184.111.154

@@ -44,7 +44,7 @@ Xcursor.size: 16
 
 ! Copied URxvg settings --------------------------------------------------
 ! URxvt.geometry: 80x25
-URxvt.font: xft:DejaVu Sans Mono:pixelsize=22:antialias=true
+URxvt.font: xft:DejaVu Sans Mono:pixelsize=20:antialias=true
 urxvt*urgentOnBell:       true
 ! URxvt*inheritPixmap: true
 ! URxvt*tintColor: gray30
@@ -67,7 +67,7 @@ URxvt.iso14755_52: false
 ! keybindings for changing font size
 URxvt.keysym.C-Up:     perl:font-size:increase
 URxvt.keysym.C-Down:   perl:font-size:decrease
- 
+
 URxvt.colorIT:      #87af5f
 URxvt.colorBD:      #d7d7d7
 URxvt.colorUL:      #87afd7
@@ -96,7 +96,7 @@ URxvt.colorUL:      #87afd7
 
 ! Xft settings ---------------------------------------------------------------
 
-Xft.dpi:        120
+Xft.dpi:        96
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true
