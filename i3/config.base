@@ -43,7 +43,7 @@ bindsym $mod+p exec dmenu_run
 bindsym $mod+Shift+P exec quickswitch
 
 # launch programs
-bindsym $mod+f exec chromium
+bindsym $mod+f exec firefox
 bindsym $mod+t exec emacsclient -c -n
 
 #startup
