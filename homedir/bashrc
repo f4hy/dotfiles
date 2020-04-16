@@ -19,6 +19,7 @@ else
     export VISUAL="emacsclient -t"
     export ALTERNATE_EDITOR=""
 fi
+DIFFPROG=meld
 
 #colored grep
 export GREP_COLOR="1;33"
