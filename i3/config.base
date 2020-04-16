@@ -28,7 +28,7 @@ new_float normal
 bindsym $mod+m border toggle
 # bindsym $mod+n bar mode toggle
 for_window [class="Chromium"] border none
-for_window [class="Firefox"] border none
+for_window [class="firefox"] border none
 for_window [class="(?i)emacs"] border 1pixel
 for_window [class="(?i)urxvt"] border 1pixel
 
@@ -40,7 +40,7 @@ bindsym $mod+Shift+l exec ~/.i3/fuzzy_lock.sh
 
 # start dmenu (a program launcher)
 bindsym $mod+p exec dmenu_run
-bindsym $mod+Shift+P exec quickswitch
+bindsym $mod+Shift+P exec quickswitch.py
 
 # launch programs
 bindsym $mod+f exec firefox
@@ -85,9 +85,9 @@ bindsym Mod1+Control+Right workspace next_on_output
 bindsym Mod1+Control+Left workspace prev_on_output
 bindsym $mod+Control+Right workspace next_on_output
 bindsym $mod+Control+Left workspace prev_on_output
-bindsym $mod+Mod1+n exec quickswitch -e
-bindsym $mod+Mod1+m exec quickswitch -m
-bindsym $mod+Mod1+j exec quickswitch -j -e
+bindsym $mod+Mod1+n exec quickswitch.py -e
+bindsym $mod+Mod1+m exec quickswitch.py -m
+bindsym $mod+Mod1+j exec quickswitch.py -j -e
 
 # split in horizontal orientation
 bindsym $mod+Shift+h split h
@@ -204,6 +204,7 @@ for_window [class="(?i)plexhometheater"] fullscreen
 assign [class="(?i)dota_linux"] → dota
 assign [class="(?i)dota2"] → dota
 assign [class="(?i)steam"] → steam
+assign [class="(?i)discord"] → discord
 assign [class="(?i)mumble"] → mumble
 assign [class="(?i)chromium" instance="(?i)crx_nckgahadagoaajjgafhacjanaoiihapd"] → chat
 assign [class="(?i)chromium" instance="(?i)crx_knipolnnllmklapflnccelgolnpehhpl"] → chat
